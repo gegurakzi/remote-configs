@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - volumeMounts:
+    - mountPath: /root/.livy-sessions
+      name: livy-external-jars-share
+  volumes:
+  - name: livy-external-jars-share
+    persistentVolumeClaim:
+      claimName: pvc-9d861225-fd24-4f8b-a364-f5f8cbde05ae
